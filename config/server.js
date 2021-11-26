@@ -1,9 +1,12 @@
 var express = require('express');
 var consign = require('consign');
+var bodyParser = require('body-parser');
 
 var app = express();
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
+
+app.use(bodyParser.urlencoded({extend: true}));
 
 /*tras os dados contidos nas rotas ou qualquer outra parte do projeto, 
 deixando assim o código mais limpo
